@@ -1,7 +1,7 @@
 {
   "name": "time-limit-promise",
   "version": "1.0.0",
-  "description": "Resolve/reject your promises on timeout.",
+  "description": "Fulfill long runinng promises on timeout.",
   "main": "./index.js",
   "scripts": {
     "test": "mocha"
@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/inikulin/time-limit-promise/issues"
   },
-  "homepage": "https://github.com/inikulin/time-limit-promise#readme"
+  "homepage": "https://github.com/inikulin/time-limit-promise#readme",
+  "devDependencies": {
+    "pinkie-promise": "^2.0.0"
+  }
 }
