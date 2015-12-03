@@ -11,7 +11,7 @@ Unlike other implementations on npm it has some nice extra features:
 
 ## Install
 ```
-npm install read-file-relative
+npm install time-limit-promise
 ```
 
 ## Usage
