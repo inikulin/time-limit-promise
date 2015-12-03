@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/inikulin/time-limit-promise#readme",
   "devDependencies": {
+    "mocha": "^2.3.4",
     "pinkie-promise": "^2.0.0"
   }
 }

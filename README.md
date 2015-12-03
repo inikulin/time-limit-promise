@@ -7,7 +7,7 @@ Unlike other implementations on npm it has some nice extra features:
  - You can both reject and resolve promises on timeout
  - You can provide custom value with which promise will be rejected or resolved on timeout
  - Unrefs promise timer, so it will not block your app from exit.
- - Uses Promise implementation of the passed promise, no external implementation dependencies, no global Promise dependencies
+ - Uses `Promise` implementation of the passed promise: no external implementation dependencies, no global `Promise` dependencies
 
 ## Install
 ```
