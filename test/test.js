@@ -1,5 +1,4 @@
 var assert    = require('assert');
-var Promise   = require('pinkie-promise');
 var timeLimit = require('../');
 var fork      = require('child_process').fork;
 

@@ -28,8 +28,10 @@
   "files": [
     "index.js"
   ],
+  "engines": {
+    "node": ">= 0.12"
+  },
   "devDependencies": {
-    "mocha": "^2.3.4",
-    "pinkie-promise": "^2.0.0"
+    "mocha": "^2.3.4"
   }
 }
