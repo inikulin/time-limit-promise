@@ -2,17 +2,23 @@ module.exports = function (promise, timeout, opts) {
     var Promise     = promise.constructor;
     var rejectWith  = opts && opts.rejectWith;
     var resolveWith = opts && opts.resolveWith;
+    var timer;
 
     var timeoutPromise = new Promise(function (resolve, reject) {
-        var timer = setTimeout(function () {
+        timer = setTimeout(function () {
             if (rejectWith !== void 0)
                 reject(rejectWith);
             else
                 resolve(resolveWith);
         }, timeout);
-
-        timer.unref();
     });
 
-    return Promise.race([timeoutPromise, promise]);
+    return Promise.race([timeoutPromise, promise])
+        .then(function (value) {
+            timer.unref();
+            return value;
+        }, function (error) {
+            timer.unref();
+            throw error;
+        });
 };
