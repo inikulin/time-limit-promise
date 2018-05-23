@@ -1,0 +1,21 @@
+var timeLimit = require('../index');
+
+function run() {
+  const promise = new Promise(function (resolve, reject) {
+    // Intentionally do nothing to mimic a bug in a poorly written
+    // promise wrapper
+  });
+
+  return timeLimit(promise, 100);
+}
+
+run()
+  .then(function () {
+    // Return a special exit code so that's
+    // possible to detect that the .then executed
+    process.exitCode = 42;
+  })
+  .catch(function (e) {
+    process.exitCode = -1;
+    console.error(e);
+  });
