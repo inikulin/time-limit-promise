@@ -15,10 +15,10 @@ module.exports = function (promise, timeout, opts) {
 
     return Promise.race([timeoutPromise, promise])
         .then(function (value) {
-            timer.unref();
+            if (timer.unref) timer.unref();
             return value;
         }, function (error) {
-            timer.unref();
+            if (timer.unref) timer.unref();
             throw error;
         });
 };
