@@ -15,10 +15,12 @@ module.exports = function (promise, timeout, opts) {
 
     return Promise.race([timeoutPromise, promise])
         .then(function (value) {
-            timer.unref();
+            // For browser support: timer.unref is only available in Node.
+            if (timer.unref) timer.unref();
             return value;
         }, function (error) {
-            timer.unref();
+            // For browser support: timer.unref is only available in Node.
+            if (timer.unref) timer.unref();
             throw error;
         });
 };
